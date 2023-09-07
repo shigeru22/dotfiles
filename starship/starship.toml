@@ -1,0 +1,178 @@
+format = '$custom$all'
+
+# first row
+
+[custom.wsl]
+format = '[  WSL ](bold bg:yellow fg:white)'
+when = 'grep -Ewqi "microsoft-\w+-wsl2" /proc/version'
+description = 'Prompt detected WSL environment.'
+
+# TODO: custom list incomplete
+
+[custom.arch]
+format = '[ 󰣇 Arch ](bold bg:cyan bg:#1793d1 fg:white)'
+when = 'grep -wq "ID=arch" /etc/os-release'
+description = 'Prompt detected Arch Linux system.'
+
+[custom.ubuntu]
+format = '[ 󰕈 Ubuntu ](bold bg:yellow bg:#e95420 fg:white)'
+when = 'grep -wq "ID=ubuntu" /etc/os-release'
+description = 'Prompt detected Ubuntu system.'
+
+[custom.debian]
+format = '[ 󰣚 Debian ](bold bg:red bg:#a81d33 fg:white)'
+when = 'grep -wq "ID=debian" /etc/os-release'
+description = 'Prompt detected Debian system.'
+
+
+[username]
+# format = " [╭─$user]($style)@"
+format = "  [$user]($style)"
+show_always = true
+style_root = "bold red"
+style_user = "bold red"
+
+[hostname]
+disabled = false
+format = "[@](bold white)[$hostname]($style) "
+ssh_only = false
+style = "bold cyan"
+# trim_at = "-"
+
+[directory]
+format = "|  [$path]($style)[$read_only]($read_only_style) "
+style = "yellow"
+truncate_to_repo = true
+truncation_length = 0
+truncation_symbol = "repo: "
+
+[sudo]
+disabled = false
+symbol = " "
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+deleted = "x"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+style = "white"
+
+[cmd_duration]
+disabled = false
+# format = "took [$duration]($style)"
+format = "|  [$duration]($style)"
+min_time = 1
+
+
+# second row
+
+[container]
+disabled = true
+
+[battery]
+charging_symbol = ""
+disabled = true
+discharging_symbol = ""
+full_symbol = ""
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+disabled = false
+style = "bold red"
+threshold = 15
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+disabled = true
+style = "bold yellow"
+threshold = 50
+
+[[battery.display]]  # "bold green" style when capacity is between 10% and 30%
+disabled = true
+style = "bold green"
+threshold = 80
+
+[time]
+disabled = true
+format = " 🕙 $time($style)\n"
+style = "bright-white"
+time_format = "%T"
+
+[character]
+error_symbol = "[❯](red)"
+success_symbol = "[❯](bold green)"
+
+[status]
+disabled = true
+format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+map_symbol = true
+pipestatus = true
+symbol = "🔴"
+
+[aws]
+symbol = " "
+
+[cmake]
+format = "via [$symbol($version )]($style)"
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+format = "via [$symbol($version )(什$tfm )]($style)"
+detect_extensions = ['csproj', 'fsproj', 'xproj', 'sln']
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "

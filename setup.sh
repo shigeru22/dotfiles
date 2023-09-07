@@ -20,3 +20,8 @@ ln -s $PWD/bash/bashrc $HOME/.bashrc
 
 # echo "  Linking ~/.blerc..."
 # ln -s $PWD/bash/blerc $HOME/.blerc
+
+echo "Linking Starship files..."
+
+echo "  Linking ~/.config/starship.toml..."
+ln -s $PWD/starship/starship.toml $HOME/starship.toml
