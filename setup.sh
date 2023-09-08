@@ -30,3 +30,8 @@ echo "Linking Neovim files..."
 
 echo "  Linking ~/.config/nvim directory..."
 ln -s $PWD/nvim $HOME/.config/nvim
+
+echo "Linking LSD files..."
+
+echo "  Linking ~/.config/lsd directory..."
+ln -s $PWD/lsd $HOME/.config/lsd
