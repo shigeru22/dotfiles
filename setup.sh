@@ -12,7 +12,7 @@ if [[ -f "$HOME/.bashrc" ]]; then
 	mv $HOME/.bashrc $HOME/.bashrc.bak
 fi
 
-echo "  Linking ~/.bash_profile"
+echo "  Linking ~/.bash_profile..."
 ln -s $PWD/bash/bash_profile $HOME/.bash_profile
 
 echo "  Linking ~/.bashrc..."
@@ -25,3 +25,8 @@ echo "Linking Starship files..."
 
 echo "  Linking ~/.config/starship.toml..."
 ln -s $PWD/starship/starship.toml $HOME/starship.toml
+
+echo "Linking Neovim files..."
+
+echo "  Linking ~/.config/nvim directory..."
+ln -s $PWD/nvim $HOME/.config/nvim
