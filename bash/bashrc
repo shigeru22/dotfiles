@@ -18,7 +18,9 @@ bind -m vi-insert -x '"\eh": run-help'
 bind -m emacs -x '"\eh": run-help'
 
 # aliases
-alias ls=lsd
+if [ -f "/usr/bin/lsd" ]; then
+	alias ls=lsd
+fi
 
 # command-not-found (pkgfile)
 source /usr/share/doc/pkgfile/command-not-found.bash
@@ -37,11 +39,25 @@ if [ -d "$HOME/.nvm" ]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
-# login programs
-wslfetch
+# flyctl
+if [ -d "$HOME/.fly" ]; then
+	export FLYCTL_INSTALL="/home/jeremy0914/.fly"
+	export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
+
+# fetch
+fetch_bins=( "/usr/bin/wslfetch" "/usr/bin/neofetch" "/usr/bin/screenfetch" )
+for fetch_bin in "${fetch_bins[@]}"; do
+	if [ -f "$fetch_bin" ]; then
+		eval "$fetch_bin"
+		break
+	fi
+done
 
 # starship prompt
-eval "$(starship init bash)"
+if [ -f "/usr/bin/starship" ]; then
+	eval "$(starship init bash)"
+fi
 
 # gpg fix for wsl
 export GPG_TTY=$(tty)
