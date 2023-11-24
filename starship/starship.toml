@@ -3,24 +3,24 @@ format = '$custom$all'
 # first row
 
 [custom.wsl]
-format = '[  WSL ](bold bg:yellow fg:white)'
+format = '[  WSL ](bold bg:yellow bg:#fcc624 fg:white fg:#000000)'
 when = 'grep -Ewqi "microsoft-\w+-wsl2" /proc/version'
 description = 'Prompt detected WSL environment.'
 
 # TODO: custom list incomplete
 
 [custom.arch]
-format = '[ 󰣇 Arch ](bold bg:cyan bg:#1793d1 fg:white)'
+format = '[ 󰣇 Arch ](bold bg:cyan bg:#1793d1 fg:white fg:#ffffff)'
 when = 'grep -wq "ID=arch" /etc/os-release'
 description = 'Prompt detected Arch Linux system.'
 
 [custom.ubuntu]
-format = '[ 󰕈 Ubuntu ](bold bg:yellow bg:#e95420 fg:white)'
+format = '[ 󰕈 Ubuntu ](bold bg:yellow bg:#e95420 fg:white fg:#ffffff)'
 when = 'grep -wq "ID=ubuntu" /etc/os-release'
 description = 'Prompt detected Ubuntu system.'
 
 [custom.debian]
-format = '[ 󰣚 Debian ](bold bg:red bg:#a81d33 fg:white)'
+format = '[ 󰣚 Debian ](bold bg:red bg:#a81d33 fg:white fg:#ffffff)'
 when = 'grep -wq "ID=debian" /etc/os-release'
 description = 'Prompt detected Debian system.'
 
@@ -30,7 +30,7 @@ description = 'Prompt detected Debian system.'
 format = "  [$user]($style)"
 show_always = true
 style_root = "bold red"
-style_user = "bold red"
+style_user = "bold yellow"
 
 [hostname]
 disabled = false
