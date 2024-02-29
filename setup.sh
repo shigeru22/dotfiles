@@ -24,7 +24,7 @@ ln -s $PWD/bash/bashrc $HOME/.bashrc
 echo "Linking Starship files..."
 
 echo "  Linking ~/.config/starship.toml..."
-ln -s $PWD/starship/starship.toml $HOME/starship.toml
+ln -s $PWD/starship/starship.toml $HOME/.config/starship.toml
 
 echo "Linking Neovim files..."
 
