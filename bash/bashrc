@@ -27,6 +27,11 @@ if [ -f "/usr/share/doc/pkgfile/command-not-found.bash" ]; then
 	source /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
+# dotnet tools
+# if [ -d "$HOME/.dotnet/tools" ]; then
+#	export PATH="$HOME/.dotnet/tools:$PATH"
+# fi
+
 # pyenv
 if [ -d "$HOME/.pyenv" ]; then
 	export PYENV_ROOT="$HOME/.pyenv"
@@ -35,16 +40,21 @@ if [ -d "$HOME/.pyenv" ]; then
 fi
 
 # nvm
-if [ -d "$HOME/.nvm" ]; then
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-fi
+# if [ -d "$HOME/.nvm" ]; then
+#	export NVM_DIR="$HOME/.nvm"
+#	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# fi
 
 # flyctl
 if [ -d "$HOME/.fly" ]; then
-	export FLYCTL_INSTALL="/home/jeremy0914/.fly"
+	export FLYCTL_INSTALL="$HOME/.fly"
 	export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
+
+# deta space cli
+if [ -d "$HOME/.detaspace" ]; then
+	export PATH="$HOME/.detaspace/bin:$PATH"
 fi
 
 # fetch
