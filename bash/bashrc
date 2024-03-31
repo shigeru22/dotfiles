@@ -74,5 +74,10 @@ fi
 # gpg fix for wsl
 export GPG_TTY=$(tty)
 
+# disable .NET telemetry
+if [ -f "/usr/bin/dotnet" ]; then
+        export DOTNET_CLI_TELEMETRY_OPTOUT=1
+fi
+
 # blesh - final attach with starship (must be at the end)
 # [[ ${BLE_VERSION-} ]] && ble-attach
